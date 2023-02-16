@@ -53,20 +53,6 @@ app.post('/collection/:collectionName' , (req, res, next)=>{
         res.send(results.ops);
     });
 });
-/*
-
-curl --header "Content-Type: application/json" --request POST --data '[
-{
-"Name":"Kt",
-"Phone": "058090",
-"Lesson ID": "1001",
-"Number of Space":5
-}
-]' http://localhost:3000/collection/orders
-
-
-
-*/
 
 /*
 // updating a collection object
@@ -108,11 +94,13 @@ app.get('/collection/:collectionName/search', (req, res, next) => {
     })
 })
 
+*/
+
 //error handler
 app.use(function(req,res){
     res.status(404).send("File not found")
 })
-*/
+
 app.listen(port,()=>{
     console.log("App started");
 })
