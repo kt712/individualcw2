@@ -246,6 +246,9 @@
                         )
                     }
                     else{
+
+
+                        // show pop up
                         Swal.fire(
                         'Success!',
                         'Order submitted successfully!',
@@ -345,7 +348,7 @@
             created() {
                 fetch("http://localhost:3000/collection/lessons")
                     .then(response => response.json())
-                    .then(data => (this.lessons = data));
+                    .then(data => (this.subjects = data));
             }
 
         });
