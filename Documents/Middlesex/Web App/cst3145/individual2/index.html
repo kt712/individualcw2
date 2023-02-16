@@ -197,7 +197,7 @@
             data: {
                 showProduct: true,
                 lowHigh: 'Ascending',
-                subjects: mySub,
+                subjects: [],
                 cart: [],
                 searchInput: '',
                 sortBy: '--Sort By--',
@@ -341,7 +341,13 @@
                 cartItemCount: function () {
                     return this.cart.length
                 },
+            },
+            created() {
+                fetch("http://localhost:3000/collection/lessons")
+                    .then(response => response.json())
+                    .then(data => (this.lessons = data));
             }
+
         });
     </script>
 </body>

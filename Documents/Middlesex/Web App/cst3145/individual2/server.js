@@ -27,6 +27,8 @@ MongoClient.connect("mongodb+srv://ismail-kabir:Danmama785@cluster0.lpmoenk.mong
     db = client.db("coursework2");
 });
 
+app.use(express.static("./"));
+
 
 app.get('/',(req,res,next)=>{
     res.send('Please select a collection e.g /collection/messages')
