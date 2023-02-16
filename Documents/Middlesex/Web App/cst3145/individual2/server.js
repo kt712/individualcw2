@@ -45,15 +45,30 @@ app.get("/collection/:collectionName", (req, res, next)=>{
         res.send(results);
     });
 });
-/*
-//adding a post to save new order
-app.post('/collection/:collectionName',(req,res,next)=>{
-    req.collection.insert(req.body,(e,results)=>{
-        if(e) return next(e)
-        res.send(results.ops)
-    })
-})
 
+//adding a post to save new order
+app.post('/collection/:collectionName' , (req, res, next)=>{
+    req.collection.insertMany(req.body, (e, results) => {
+        if (e) return next(e);
+        res.send(results.ops);
+    });
+});
+/*
+
+curl --header "Content-Type: application/json" --request POST --data '[
+{
+"Name":"Kt",
+"Phone": "058090",
+"Lesson ID": "1001",
+"Number of Space":5
+}
+]' http://localhost:3000/collection/orders
+
+
+
+*/
+
+/*
 // updating a collection object
 app.put('/collection/:collectionName/:id',(req,res,next)=>{
     req.collection.update(
