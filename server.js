@@ -68,6 +68,31 @@ app.put('/collection/:collectionName', (req, res) => {
         })
     });
     res.send({msg: "spaces successfully updated"})
+});
+
+//search
+app.get('/collection/:collectionName/search', (req, res, next) => {
+    let query_str = req.query.key_word
+    req.collection.find({}).toArray((e, results) => {
+        if (e) return next(e)
+        let newList = results.filter((lesson) => {
+            return lesson.subject.toLowerCase().match(query_str) || lesson.location.toLowerCase().match(query_str)
+        });
+        res.send(newList)
+    })
+});
+
+//static files
+app.use((req,res,next)=>{
+    var filePath = path.join(__dirname, 'images',req.url)
+    fs.stat(filePath, function(err,fileInfo){
+        if(err){
+            next();
+            return ;
+        }
+        if(fileInfo.isFile) res.send(filePath)
+        else next()
+    })
 })
 
 
