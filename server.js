@@ -56,47 +56,20 @@ app.post('/collection/:collectionName' , (req, res, next)=>{
     });
 });
 
-/*
-// updating a collection object
-app.put('/collection/:collectionName/:id',(req,res,next)=>{
-    req.collection.update(
-        {_id:new objectId(req.params.id)},
-        {$set:req.body},
-        {safe:true, multi:false},
-        (e,result)=>{
-            if(e)return next(e)
-            res.send(result.result.n ===1)?{'message':'Success'}:{'message':'Error'}
-        }
-    )
+
+// UPDATE SPACES OF LESSONS IN DB AFTER ORDER
+app.put('/collection/:collectionName', (req, res) => {
+    req.body.forEach((item) => {
+        let filter = { id: item.id }
+        let new_value = { $set: {numberofspaces: item.numberofspaces} }
+        let options = { safe: true, multi: false }
+        req.collection.updateOne(filter, new_value, options, (err, result) => {
+            if (err) return next(err)
+        })
+    });
+    res.send({msg: "spaces successfully updated"})
 })
 
-// search
-app.get('/collection/:collectionName/search', (req, res, next) => {
-    let query_str = req.query.key_word
-    req.collection.find({}).toArray((e, results) => {
-        if (e) return next(e)
-        let newList = results.filter((lesson) => {
-            return lesson.subject.toLowerCase().match(query_str) || lesson.location.toLowerCase().match(query_str)
-        });
-        res.send(newList)
-    })
-})
-
-
-// serving static files
-   app.use((req,res,next)=>{
-    var filePath = path.join(__dirname, 'images',req.url)
-    fs.stat(filePath, function(err,fileInfo){
-        if(err){
-            next();
-            return ;
-        }
-        if(fileInfo.isFile) res.send(filePath)
-        else next()
-    })
-})
-
-*/
 
 //error handler
 app.use(function(req,res){
