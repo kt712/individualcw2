@@ -5,8 +5,8 @@ let mySub =[
         "title": "Math",
         "location":"London",
         "price": 150,
-        "image": "images/math.jpg",
-        "availableInventory": 15
+        "image": "math.jpg",
+        "availableInventory": 1
        
       }, 
       {
@@ -14,7 +14,7 @@ let mySub =[
         "title": "English",
         "location":"Chelsea",
         "price": 150,
-        "image": "images/eng.jpg",
+        "image": "eng.jpg",
         "availableInventory": 15
        
       }, 
@@ -23,7 +23,7 @@ let mySub =[
         "title": "Physics",
         "location":"Oxford",
         "price": 80,
-        "image": "images/phy.jpg",
+        "image": "phy.jpg",
         "availableInventory": 5
        
       }, 
@@ -32,7 +32,7 @@ let mySub =[
         "title": "Music",
         "location":"New York",
         "price": 100,
-        "image": "images/music.jpg",
+        "image": "music.jpg",
         "availableInventory": 5
        
       }, 
@@ -41,7 +41,7 @@ let mySub =[
         "title": "Web App",
         "location":"Dubai",
         "price": 150,
-        "image": "images/web.jpg",
+        "image": "web.jpg",
         "availableInventory": 15
        
       }, 
@@ -50,7 +50,7 @@ let mySub =[
         "title": "UI/UX",
         "location":"Sharjah",
         "price": 90,
-        "image": "images/ui.jpg",
+        "image": "ui.jpg",
         "availableInventory": 10
        
       }, 
@@ -59,7 +59,7 @@ let mySub =[
         "title": "Math",
         "location":"Dubai",
         "price": 90,
-        "image": "images/math.jpg",
+        "image": "math.jpg",
         "availableInventory": 6
        
       }, 
@@ -68,7 +68,7 @@ let mySub =[
         "title": "English",
         "location":"Doha",
         "price": 85,
-        "image": "images/eng.jpg",
+        "image": "eng.jpg",
         "availableInventory": 15
        
       }, 
@@ -77,7 +77,7 @@ let mySub =[
         "title": "Web App",
         "location":"London",
         "price": 100,
-        "image": "images/web.jpg",
+        "image": "web.jpg",
         "availableInventory": 5
        
       }, 
@@ -86,7 +86,7 @@ let mySub =[
         "title": "Economics",
         "location":"New York",
         "price": 100,
-        "image": "images/econs.jpg",
+        "image": "econs.jpg",
         "availableInventory": 10
        
       }, 
